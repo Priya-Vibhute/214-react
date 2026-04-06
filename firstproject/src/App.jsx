@@ -6,12 +6,15 @@ import Product from './components/Product'
 import Category from './components/Category'
 import Student from './components/Student'
 import Counter from './components/Counter'
+import Recipe from './components/Recipe'
 // import './App.css'
 
 function App() {
   return (
     <>
      <Counter/>
+     <Category/>
+     <Recipe/>
     </>
   );
 }
