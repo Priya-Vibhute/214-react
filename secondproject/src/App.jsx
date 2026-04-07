@@ -7,6 +7,7 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home'
 import Products from './components/Products'
 import Recipe from './components/Recipe'
+import Effect from './components/Effect'
 // import './App.css'
 
 const router=createBrowserRouter([
@@ -25,6 +26,10 @@ const router=createBrowserRouter([
       {
         path:'/recipes',
         element:<Recipe/>
+      },
+      {
+        path:'useeffect-example',
+        element:<Effect/>
       }
     ]
   }
