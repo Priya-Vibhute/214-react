@@ -58,9 +58,61 @@ function Navbar() {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="#">
-                    Action
-                  </a>
+                  <Link
+                    class="dropdown-item"
+                    href="#"
+                    to={"/uncontrolled-form"}
+                  >
+                    uncontrolled-form
+                  </Link>
+                </li>
+
+                <li>
+                  <Link class="dropdown-item" href="#" to={"/controlled-form"}>
+                    controlled-form
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    class="dropdown-item"
+                    href="#"
+                    to={"/controlled-form-2"}
+                  >
+                    controlled-form 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link class="dropdown-item" href="#" to={"/login"}>
+                    Login
+                  </Link>
+                </li>
+
+                <li>
+                  <Link class="dropdown-item" href="#" to={"/register"}>
+                    register
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    class="dropdown-item"
+                    href="#"
+                    to={"/context-example-1"}
+                  >
+                    context example 1
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    class="dropdown-item"
+                    href="#"
+                    to={"/context-example"}
+                  >
+                    context example 
+                  </Link>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">

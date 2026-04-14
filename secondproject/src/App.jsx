@@ -8,6 +8,14 @@ import Home from './components/Home'
 import Products from './components/Products'
 import Recipe from './components/Recipe'
 import Effect from './components/Effect'
+import Uncontrolled from './components/Uncontrolled'
+import Controlled from './components/Controlled'
+import Controlled2 from './components/common/Controlled2'
+import Login from './components/Login'
+import Register from './components/Register'
+import A from './components/A'
+import M from './components/M'
+import { LoginProvider } from './context/LoginContext'
 // import './App.css'
 
 const router=createBrowserRouter([
@@ -30,6 +38,34 @@ const router=createBrowserRouter([
       {
         path:'useeffect-example',
         element:<Effect/>
+      },
+      {
+        path:'uncontrolled-form',
+        element:<Uncontrolled/>
+      },
+      {
+        path:'controlled-form',
+        element:<Controlled/>
+      },
+      {
+        path:'controlled-form-2',
+        element:<Controlled2/>
+      },
+      {
+        path:'login',
+        element:<Login/>
+      },
+      {
+        path:'register',
+        element:<Register/>
+      },
+      {
+        path:'context-example-1',
+        element:<A/>
+      },
+      {
+        path:'context-example',
+        element:<M/>
       }
     ]
   }
@@ -41,9 +77,11 @@ function App() {
  
   return (
     <>
-      <RouterProvider router={router}/>
+      <LoginProvider>
+          <RouterProvider router={router} />
+      </LoginProvider>
     </>
-  )
+  );
 }
 
 export default App
