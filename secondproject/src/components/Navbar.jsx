@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { LoginContext } from '../context/LoginContext';
 
 function Navbar() {
+
+  const {isLoggedIn,user,logout}=useContext(LoginContext)
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -106,12 +110,8 @@ function Navbar() {
                 </li>
 
                 <li>
-                  <Link
-                    class="dropdown-item"
-                    href="#"
-                    to={"/context-example"}
-                  >
-                    context example 
+                  <Link class="dropdown-item" href="#" to={"/context-example"}>
+                    context example
                   </Link>
                 </li>
                 <li>
@@ -129,16 +129,34 @@ function Navbar() {
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-              >
-                Disabled
-              </a>
-            </li>
+            {isLoggedIn() ? (
+              <>
+                <li class="nav-item">
+                  <button class="nav-link" href="#" tabindex="-1" onClick={()=>logout()}>
+                    Logout
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" tabindex="-1">
+                     {user?.email}
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li class="nav-item">
+                  <a class="nav-link " href="#" tabindex="-1">
+                    Login
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link " href="#" tabindex="-1">
+                    Register
+                  </a>
+                </li>
+              </>
+            )}
           </ul>
           <form class="d-flex">
             <input

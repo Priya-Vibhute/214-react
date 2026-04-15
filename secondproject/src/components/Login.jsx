@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useForm} from 'react-hook-form'
+import { LoginContext } from '../context/LoginContext';
 
 function Login() {
+
+  const {login}=useContext(LoginContext);
 
   const {register,handleSubmit,formState:{errors}}=useForm();
 
   const submitHandler=(data)=>{
     console.log(data);
+    login(data)
     
     
   }
