@@ -114,6 +114,12 @@ function Navbar() {
                     context example
                   </Link>
                 </li>
+
+                <li>
+                  <Link class="dropdown-item" href="#" to={"/reducer"}>
+                   reducer
+                  </Link>
+                </li>
                 <li>
                   <a class="dropdown-item" href="#">
                     Another action
@@ -132,13 +138,18 @@ function Navbar() {
             {isLoggedIn() ? (
               <>
                 <li class="nav-item">
-                  <button class="nav-link" href="#" tabindex="-1" onClick={()=>logout()}>
+                  <button
+                    class="nav-link"
+                    href="#"
+                    tabindex="-1"
+                    onClick={() => logout()}
+                  >
                     Logout
                   </button>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#" tabindex="-1">
-                     {user?.email}
+                    {user?.email}
                   </a>
                 </li>
               </>

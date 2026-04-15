@@ -16,7 +16,16 @@ import Register from './components/Register'
 import A from './components/A'
 import M from './components/M'
 import { LoginProvider } from './context/LoginContext'
+import {ErrorBoundary} from 'react-error-boundary'
+import ReducerExample from './components/ReducerExample'
 // import './App.css'
+
+function ErrorFallback(){
+  return <>
+    <h2>Something went wrong</h2>
+    <p>We're sorry, but something went wrong.</p>
+  </>
+}
 
 const router=createBrowserRouter([
   { 
@@ -29,7 +38,8 @@ const router=createBrowserRouter([
       },
       {
         path:'/products',
-        element:<Products/>
+        element:<Products/>,
+        errorElement:<ErrorFallback/>
       },
       {
         path:'/recipes',
@@ -66,6 +76,10 @@ const router=createBrowserRouter([
       {
         path:'context-example',
         element:<M/>
+      },
+      {
+        path:'reducer',
+        element:<ReducerExample/>
       }
     ]
   }
@@ -77,6 +91,10 @@ function App() {
  
   return (
     <>
+      {/* <ErrorBoundary FallbackComponent={ErrorFallback}>
+           <Products />
+      </ErrorBoundary> */}
+
       <LoginProvider>
           <RouterProvider router={router} />
       </LoginProvider>

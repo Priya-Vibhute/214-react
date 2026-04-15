@@ -29,6 +29,7 @@ function Products() {
        {products ?  
        products.map((p)=> <div class="col">
     <div class="card">
+      <p>{p}</p>
       <img src={p.image}class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{p.title}</h5>
